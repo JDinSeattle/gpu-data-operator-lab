@@ -1,0 +1,19 @@
+{
+  "schema":1,
+  "seed":1729,
+  "backend":"pylibcudf-cu13==26.8.1",
+  "operator":"groupby sum, count(valid), count(all)",
+  "input_schema":{"key":"nullable int64","value":"nullable int64 cents"},
+  "null_keys":"included as one group",
+  "all_null_sum":"null",
+  "order":"unspecified; normalize by key with null last",
+  "float_nan":"excluded by schema; never converted to null",
+  "max_rows":2147483647,
+  "benchmark":[
+    {"id":"small-uniform","rows":1000,"groups":100,"skew":0.0,"nulls":0.01},
+    {"id":"medium-uniform","rows":100000,"groups":10000,"skew":0.0,"nulls":0.01},
+    {"id":"large-uniform","rows":1000000,"groups":100000,"skew":0.0,"nulls":0.01},
+    {"id":"large-skew","rows":1000000,"groups":1000,"skew":0.95,"nulls":0.5},
+    {"id":"large-one-group","rows":1000000,"groups":1,"skew":1.0,"nulls":0.0}
+  ]
+}

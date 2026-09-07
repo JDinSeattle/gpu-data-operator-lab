@@ -1,0 +1,5 @@
+Collecting data...
+Generating '/tmp/nsys-report-13e9.qdstrm'
+[1/1] [0%                          ] groupby-trace.nsys-rep[1/1] [0%                          ] groupby-trace.nsys-rep[1/1] [6%                          ] groupby-trace.nsys-rep[1/1] [==========49%               ] groupby-trace.nsys-rep[1/1] [======================91%   ] groupby-trace.nsys-rep[1/1] [======================92%   ] groupby-trace.nsys-rep[1/1] [=======================93%  ] groupby-trace.nsys-rep[1/1] [========================100%] groupby-trace.nsys-rep[1/1] [========================100%] groupby-trace.nsys-rep
+Generated:
+	/home/postedism/Desktop/kernal libraries/D-gpu-data-operator-lab/results/groupby-trace.nsys-rep

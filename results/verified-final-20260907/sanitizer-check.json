@@ -1,0 +1,281 @@
+{
+  "capacity_test": {
+    "reason": "capacity budget 1 < estimate 1048576",
+    "status": "expected rejection"
+  },
+  "environment": {
+    "git": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "returncode": 128,
+      "stderr": "fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'\n",
+      "stdout": "HEAD\n"
+    },
+    "gpu": {
+      "argv": [
+        "nvidia-smi",
+        "--query-gpu=name,uuid,driver_version,compute_cap,pstate,temperature.gpu,clocks.sm,clocks.mem,power.draw,power.limit,memory.total,memory.used",
+        "--format=csv"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "name, uuid, driver_version, compute_cap, pstate, temperature.gpu, clocks.current.sm [MHz], clocks.current.memory [MHz], power.draw [W], power.limit [W], memory.total [MiB], memory.used [MiB]\nNVIDIA GeForce RTX 4090, GPU-048ba00a-2056-d3c0-6309-91c78ab69d63, 595.84, 8.9, P2, 44, 2520 MHz, 10251 MHz, 66.36 W, 450.00 W, 24564 MiB, 10018 MiB\n"
+    },
+    "measurement_policy": {
+      "clock_changes": false,
+      "display_gpu": true,
+      "scope": "one GPU; unlocked clocks; no cross-architecture claim"
+    },
+    "nvcc": {
+      "argv": [
+        "nvcc",
+        "--version"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Fri_May_08_10:53:34_AM_PDT_2026\nCuda compilation tools, release 13.2, V13.2.86\nBuild cuda_13.2.r13.2/compiler.37953736_0\n"
+    },
+    "packages": {
+      "cuda-bindings": "13.2.0",
+      "cuda-python": "13.2.0",
+      "cupy-cuda13x": "14.2.0",
+      "flashinfer-python": "0.6.18.post1",
+      "numpy": "2.5.3",
+      "nvidia-cuda-runtime": "13.0.96",
+      "nvidia-cutlass-dsl": "4.7.1",
+      "pyarrow": "25.0.1",
+      "pylibcudf-cu13": "26.8.1",
+      "pytest": "9.1.1",
+      "rmm-cu13": "26.8.0",
+      "torch": "2.13.0",
+      "triton": "3.7.1"
+    },
+    "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.43",
+    "python": "3.13.15 (main, Aug  7 2026, 02:25:50) [Clang 22.1.3 ]",
+    "source_digest": "369b38036acba129fb0ecbe2cc50085d1054ce2e2abad429bbaa852f27845f82",
+    "source_files": {
+      "evidence.py": "35deb32fbea513d5b22c1fa1307b9b8e3c34c379918f4ef9c10935e7149cd15d",
+      "groupby.py": "25b989b71315ad36cb14ebff276aa3427414699d8942132b1948403c99d8b8f2",
+      "manifests/project.json": "64f996821be319700755e67cd679c6c6aa8c8d5304b12d0fcf080cbfe677b423",
+      "manifests/workloads.json": "2a05311fdaaa18d42307db355f4b3a78c419853d129b836f57bf2dbdf826e5fc",
+      "qualification.py": "06fd321e9b09e4869b4a519ec39d9e2454e1316a1fb468a04db8569b38ea1672",
+      "requirements.lock": "f4c56caa9da36be0925d09bbc7a3a83129bf8564776196d28d72bf63298eceb3",
+      "scripts/reproduce.sh": "89805132619f9ce714247ec686176f50adbbfd4c727136f29c579ff1f4a60503",
+      "scripts/run.py": "4fff5ac535d28f856c1983a7df12f305c7fda68684e9e31cf23f7f53f25bb729",
+      "scripts/summarize.py": "879efdd5cc00b534ddb78bcc5f08c75dfa120fbf2785bb3cf43d2b0365564e7d",
+      "tests/test_evidence.py": "708ffbca5ab111b03109cf196ff96e9a0ba2c1a968bdee30d6ddd43bf4d138b2",
+      "tests/test_semantics.py": "1aac8a5eeb17fb77bac0ddc0d9881dbc7c05e6d7e0247ddb751572963a94362a"
+    },
+    "utc": "2026-09-07T03:33:11.945450+00:00"
+  },
+  "records": [
+    {
+      "case": "empty",
+      "cpu": {
+        "exact": true,
+        "groups": 0,
+        "rows": 0,
+        "valid_values": 0
+      },
+      "fingerprint": "62c95476334070b0cd57293d09773594a45cfdfc7131df071f420111fc7ab242",
+      "gpu": {
+        "exact": true,
+        "groups": 0,
+        "rows": 0,
+        "valid_values": 0
+      },
+      "schema": "key: int64\nvalue: int64"
+    },
+    {
+      "case": "all-null",
+      "cpu": {
+        "exact": true,
+        "groups": 1,
+        "rows": 2,
+        "valid_values": 0
+      },
+      "fingerprint": "e8884e13719b42432feb0d734098012d1aee1bd07ccc353775f7df6ee8cec1e7",
+      "gpu": {
+        "exact": true,
+        "groups": 1,
+        "rows": 2,
+        "valid_values": 0
+      },
+      "schema": "key: int64\nvalue: int64"
+    },
+    {
+      "case": "null-groups",
+      "cpu": {
+        "exact": true,
+        "groups": 3,
+        "rows": 5,
+        "valid_values": 2
+      },
+      "fingerprint": "b400470e5468ac202e64543219e98fb48987e494404858b3bb7fa629afb8d86f",
+      "gpu": {
+        "exact": true,
+        "groups": 3,
+        "rows": 5,
+        "valid_values": 2
+      },
+      "schema": "key: int64\nvalue: int64"
+    },
+    {
+      "case": "duplicates",
+      "cpu": {
+        "exact": true,
+        "groups": 2,
+        "rows": 5,
+        "valid_values": 4
+      },
+      "fingerprint": "cdc19e6fe882f4098a7b72bd38c4f6c17a3b2139ff0d2ca455cf918068d7b71b",
+      "gpu": {
+        "exact": true,
+        "groups": 2,
+        "rows": 5,
+        "valid_values": 4
+      },
+      "schema": "key: int64\nvalue: int64"
+    },
+    {
+      "case": "numeric-boundaries",
+      "cpu": {
+        "exact": true,
+        "groups": 2,
+        "rows": 4,
+        "valid_values": 4
+      },
+      "fingerprint": "eae4fe75417a3861d8d8b7880f781c5ddd264884e67dff4c72f8120292a92674",
+      "gpu": {
+        "exact": true,
+        "groups": 2,
+        "rows": 4,
+        "valid_values": 4
+      },
+      "schema": "key: int64\nvalue: int64"
+    },
+    {
+      "case": "single-skew",
+      "cpu": {
+        "exact": true,
+        "groups": 1,
+        "rows": 10001,
+        "valid_values": 10000
+      },
+      "fingerprint": "bfea76a3be1c51505b64ee7605b6cbb122fe013971f8dcfd62d69c3f22983507",
+      "gpu": {
+        "exact": true,
+        "groups": 1,
+        "rows": 10001,
+        "valid_values": 10000
+      },
+      "schema": "key: int64\nvalue: int64"
+    },
+    {
+      "case": "null-key-values",
+      "cpu": {
+        "exact": true,
+        "groups": 2,
+        "rows": 4,
+        "valid_values": 3
+      },
+      "fingerprint": "400a1e2264423dcfd539864e4eb838a3ca2a332e5fb6d3840e9e943bb34d21e9",
+      "gpu": {
+        "exact": true,
+        "groups": 2,
+        "rows": 4,
+        "valid_values": 3
+      },
+      "schema": "key: int64\nvalue: int64"
+    },
+    {
+      "case": "small-uniform",
+      "cpu": {
+        "exact": true,
+        "groups": 101,
+        "rows": 1000,
+        "valid_values": 988
+      },
+      "fingerprint": "f4a5fa2c603596dff7c8f902ef172a4fa7c90a5c4ff0a4b43e750d7773fdf38e",
+      "gpu": {
+        "exact": true,
+        "groups": 101,
+        "rows": 1000,
+        "valid_values": 988
+      },
+      "schema": "key: int64\nvalue: int64"
+    },
+    {
+      "case": "medium-uniform",
+      "cpu": {
+        "exact": true,
+        "groups": 10000,
+        "rows": 100000,
+        "valid_values": 98976
+      },
+      "fingerprint": "e382b98478e180cce2aabfdbba970777a2ba1250847b009f9e5fcb8a332ed2f2",
+      "gpu": {
+        "exact": true,
+        "groups": 10000,
+        "rows": 100000,
+        "valid_values": 98976
+      },
+      "schema": "key: int64\nvalue: int64"
+    },
+    {
+      "case": "large-uniform",
+      "cpu": {
+        "exact": true,
+        "groups": 99997,
+        "rows": 1000000,
+        "valid_values": 990141
+      },
+      "fingerprint": "b804792284201a7f77284e9821488144c534311fa63eaef8d297c78a1122f17a",
+      "gpu": {
+        "exact": true,
+        "groups": 99997,
+        "rows": 1000000,
+        "valid_values": 990141
+      },
+      "schema": "key: int64\nvalue: int64"
+    },
+    {
+      "case": "large-skew",
+      "cpu": {
+        "exact": true,
+        "groups": 1001,
+        "rows": 1000000,
+        "valid_values": 499379
+      },
+      "fingerprint": "2b1fcb10e12ed9ef620cbd1b05cd86f3fa00fe6e0214ce9768a40860aebb8a70",
+      "gpu": {
+        "exact": true,
+        "groups": 1001,
+        "rows": 1000000,
+        "valid_values": 499379
+      },
+      "schema": "key: int64\nvalue: int64"
+    },
+    {
+      "case": "large-one-group",
+      "cpu": {
+        "exact": true,
+        "groups": 2,
+        "rows": 1000000,
+        "valid_values": 1000000
+      },
+      "fingerprint": "309221e01466e4440a09b5d225f269df81a7bb259c032bc6084d6f9fa5f241d9",
+      "gpu": {
+        "exact": true,
+        "groups": 2,
+        "rows": 1000000,
+        "valid_values": 1000000
+      },
+      "schema": "key: int64\nvalue: int64"
+    }
+  ],
+  "status": "passed"
+}

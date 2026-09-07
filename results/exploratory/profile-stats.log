@@ -1,0 +1,7 @@
+Generating SQLite file results/groupby-trace.sqlite from results/groupby-trace.nsys-rep
+Processing [results/groupby-trace.sqlite] with [/opt/nvidia/nsight-systems/2025.6.3/host-linux-x64/reports/cuda_gpu_kern_sum.py] to [results/groupby_cuda_gpu_kern_sum.csv]... PROCESSED
+
+Processing [results/groupby-trace.sqlite] with [/opt/nvidia/nsight-systems/2025.6.3/host-linux-x64/reports/cuda_gpu_mem_time_sum.py] to [results/groupby_cuda_gpu_mem_time_sum.csv]... PROCESSED
+
+Processing [results/groupby-trace.sqlite] with [/opt/nvidia/nsight-systems/2025.6.3/host-linux-x64/reports/nvtx_sum.py] to [results/groupby_nvtx_sum.csv]... PROCESSED
+

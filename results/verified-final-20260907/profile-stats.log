@@ -1,0 +1,7 @@
+Generating SQLite file /home/postedism/Desktop/kernal libraries/D-gpu-data-operator-lab/results/verified-final-20260907/profile.sqlite from /home/postedism/Desktop/kernal libraries/D-gpu-data-operator-lab/results/verified-final-20260907/profile.nsys-rep
+Processing [/home/postedism/Desktop/kernal libraries/D-gpu-data-operator-lab/results/verified-final-20260907/profile.sqlite] with [/opt/nvidia/nsight-systems/2025.6.3/host-linux-x64/reports/cuda_gpu_kern_sum.py] to [/home/postedism/Desktop/kernal libraries/D-gpu-data-operator-lab/results/verified-final-20260907/profile_cuda_gpu_kern_sum.csv]... PROCESSED
+
+Processing [/home/postedism/Desktop/kernal libraries/D-gpu-data-operator-lab/results/verified-final-20260907/profile.sqlite] with [/opt/nvidia/nsight-systems/2025.6.3/host-linux-x64/reports/cuda_gpu_mem_time_sum.py] to [/home/postedism/Desktop/kernal libraries/D-gpu-data-operator-lab/results/verified-final-20260907/profile_cuda_gpu_mem_time_sum.csv]... PROCESSED
+
+Processing [/home/postedism/Desktop/kernal libraries/D-gpu-data-operator-lab/results/verified-final-20260907/profile.sqlite] with [/opt/nvidia/nsight-systems/2025.6.3/host-linux-x64/reports/nvtx_sum.py] to [/home/postedism/Desktop/kernal libraries/D-gpu-data-operator-lab/results/verified-final-20260907/profile_nvtx_sum.csv]... PROCESSED
+

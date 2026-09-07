@@ -1,0 +1,8 @@
+pylibcudf-cu13==26.8.1
+cupy-cuda13x==14.2.0
+pyarrow==25.0.1
+numpy==2.5.3
+pytest==9.1.1
+nvtx==0.2.16
+cuda-python==13.2.0
+cuda-bindings==13.2.0
